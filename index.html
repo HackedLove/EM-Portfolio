@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cybersecurity Portfolio</title>
+  <title>Elvis Montan | Cybersecurity & IT Support Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -18,7 +18,7 @@
     }
     header {
       background: #fff;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
       border-bottom: 1px solid #e0e0e0;
     }
@@ -29,33 +29,40 @@
     header p {
       font-size: 1.2rem;
       color: #6e6e73;
+      margin-top: 0.5rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
     section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+      margin: 3rem 0;
     }
     h2 {
       font-size: 1.8rem;
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       text-align: center;
+      color: #1d1d1f;
     }
-    .projects {
+    .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      gap: 1.5rem;
     }
     .card {
       background: #fff;
-      padding: 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 1.8rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
     .card h3 {
@@ -63,8 +70,26 @@
       margin-bottom: 0.8rem;
     }
     .card p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #515154;
+      margin-bottom: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #0071e3;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      align-self: flex-start;
+    }
+    .btn:hover {
+      background-color: #0077ed;
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -72,101 +97,281 @@
       background: #fff;
       color: #6e6e73;
       border-top: 1px solid #e0e0e0;
-      margin-top: 3rem;
-    }
-    a {
-      color: #0071e3;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Elvis Montan</h1>
-    <p>Cybersecurity Analyst | Ethical Hacking Enthusiast | Help Desk IT Support</p>
+    <p>IT Support Specialist | Cybersecurity Analyst | Operational Coordinator</p>
   </header>
 
-  <!-- Main Content Wrapper -->
-<main style="background: url v748-toon-106.jpg no-repeat center center/cover; min-height: 100vh; padding: 40px 0;">
-
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-    <p style="text-align:center; max-width:700px; margin: 0 auto;">
-      I am an entry-level cybersecurity professional with the passion for problem solving, investigating threats, and uncovering hidden patterns in network traffic. I look forward to working on real-world challenges, building security projects, and sharing my journey as I move toward mastering cybersecurity.
-    </p>
-  </section>
-
-  <!-- Resume Section -->
-<!-- <section id="portfolio" class="section">
-  <h2>Resume</h2>
-  <div class="card">
-  <div class="container" style="text-align: center;">
-    <p>Focused on SOC analysis & DFIR, with practical experience using Splunk, ELK, Wireshark, Zeek, Autopsy, & Volatility to analyze logs, detect threats, & support incident response in simulated real-world environments.:</p>
-    <a href="cyber-resume.pdf" target="_blank" class="btn"> View CyberSecurity Resume</a>
-  </div>
-  <div class="card">
-  <div class="container" style="text-align: center;">
-    <p>Focused on providing technical support, resolving user issues, & maintaining smooth IT operations. Strong communication, problem-solving, & system troubleshooting skills, with CompTIA A+ in progress.:</p>
-    <a href="help-desk-IT-support-resume.pdf" target="_blank" class="btn"> View Help Desk / IT Support Resume</a>
-  </div>
-</section>  -->
-
-   <!-- Certification Section -->
-  <section>
-    <h2>Certificates</h2>
-    <div class="Certificates">
-      <div class="card">
-        <h3>Google CyberSecurity Certification</h3>
-        <p>Completed the Google Cybersecurity Certificate, gaining hands-on experience with Python, Linux, SQL, and SIEM tools while learning to identify and mitigate security risks, threats, and vulnerabilities to protect networks, systems, and data.</p>
-        <a href="google-cybersecurity.pdf" target="_blank" class="btn">View Google Certificate</a>
+  <main>
+    <!-- About Me Section -->
+    <section>
+      <h2>About Me</h2>
+      <div class="card" style="text-align: center;">
+        <p style="max-width: 750px; margin: 0 auto; color: #333;">
+          I am an IT Support and Cybersecurity professional blending years of high-stakes operational coordination experience with hands-on technical training. I specialize in endpoint troubleshooting, threat identification, incident triage, and clear, user-first communication.
+        </p>
       </div>
-       <div class="card">
-        <h3>THM Jr Penetration Tester Certification</h3>
-        <p>Explored Zeek logs to identify anomalies and detect potential malicious traffic as part of hands-on learning in network forensics.</p>
-        <a href="THM-JR-PENTESTER.pdf" target="_blank" class="btn">View Pentester Certificate</a>
-      </div>
-       <div class="card">
-        <h3>THM SOC Level 1 Certification</h3>
-        <p>Earned the TryHackMe SOC Level 1 certificate, gaining hands-on experience in threat detection, log analysis, SIEM investigation, phishing analysis, and incident response workflows using tools like Splunk, Elastic, and Wireshark..</p>
-        <a href="THM-SOC-LEVEL-1.pdf" target="_blank" class="btn">View SOC 1 Certificate</a>
-      </div>
-       <div class="card">
-        <h3>THM CyberSecurity 101 Certification</h3>
-        <p>Completed the TryHackMe Cyber Security 101 certificate, building foundational knowledge in cybersecurity concepts, networking, threat types, and defensive strategies while gaining hands-on experience with basic security tools and real-world scenarios.</p>
-        <a href="THM-CYBER-SECURITY-101.pdf" target="_blank" class="btn">View CyberSecurity 101 Certificate</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  
-  <!-- Portfolio Section -->
-  <section>
-    <h2>Web App Pentest Reports</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Hammer Web App Case Study</h3>
-        <p>Completed an in-depth analysis of IDS alerts, C2 communications, and MITRE ATT&CK techniques. The report includes screenshots, findings, and conclusions.</p>
-        <a href="Hammer_Report.pdf" target="_blank" class="btn">View Hammer Report</a>
-    </div> 
-    <div class="projects">
-      <div class="card">
-        <h3>Pyrat Web App Case Study</h3>
-        <p>Investigated a possible vulnerability that allows an unauthenticated attacker obtain acccess through a RAT, eventually gaining root through privilage escalation techniques. The report includes screenshots, findings, and conclusions.</p>
-        <a href="Pyrat_Report.pdf" target="_blank" class="btn">View Pyrat Report</a>
-    </div>
+    <!-- Resume Section -->
+    <section id="resumes">
+      <h2>Resumes</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Cybersecurity Resume</h3>
+          <p>Focused on SOC analysis, threat detection, log analysis, and incident response using tools like Splunk, Wireshark, and Linux.</p>
+          <a href="cyber-resume.pdf" target="_blank" class="btn">View Cyber Resume</a>
+        </div>
+        <div class="card">
+          <h3>Help Desk / IT Support Resume</h3>
+          <p>Targeted toward IT support, user endpoint provisioning, ticketing workflows, Active Directory administration, and troubleshooting.</p>
+          <a href="help-desk-IT-support-resume.pdf" target="_blank" class="btn">View IT Support Resume</a>
+        </div>
+      </div>
+    </section>
 
-      
-    
-    </div>
-  </section>
+    <!-- Certification Section -->
+    <section>
+      <h2>Certificates</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Google Cybersecurity</h3>
+          <p>Hands-on experience with Python, Linux, SQL, and SIEM tools, identifying vulnerabilities and mitigating security risks.</p>
+          <a href="google-cybersecurity.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Jr Penetration Tester</h3>
+          <p>Explored log anomalies, network forensics, and practical penetration testing methodologies.</p>
+          <a href="THM-JR-PENTESTER.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM SOC Level 1</h3>
+          <p>Practical threat detection, SIEM investigation, phishing analysis, and incident response workflows using Splunk and Elastic.</p>
+          <a href="THM-SOC-LEVEL-1.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Cybersecurity 101</h3>
+          <p>Foundational knowledge in networking, core threat vectors, and defensive security strategies.</p>
+          <a href="THM-CYBER-SECURITY-101.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section / Reports -->
+    <section>
+      <h2>Web App Pentest Reports & Case Studies</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Hammer Web App Case Study</h3>
+          <p>In-depth analysis of IDS alerts, C2 communications, and MITRE ATT&CK techniques with structured findings.</p>
+          <a href="Hammer_Report.pdf" target="_blank" class="btn">View Hammer Report</a>
+        </div>
+        <div class="card">
+          <h3>Pyrat Web App Case Study</h3>
+          <p>Investigation of a remote access vulnerability, privilege escalation path, and security findings report.</p>
+          <a href="Pyrat_Report.pdf" target="_blank" class="btn">View Pyrat Report</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Elvis Montan | Built for cybersecurity</p>
+    <p>&copy; 2026 Elvis Montan | Built for IT Support & Cybersecurity</p>
   </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elvis Montan | Cybersecurity & IT Support Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #6e6e73;
+      margin-top: 0.5rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin: 3rem 0;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #1d1d1f;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #515154;
+      margin-bottom: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #0071e3;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      align-self: flex-start;
+    }
+    .btn:hover {
+      background-color: #0077ed;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      color: #6e6e73;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Elvis Montan</h1>
+    <p>IT Support Specialist | Cybersecurity Analyst | Operational Coordinator</p>
+  </header>
+
+  <main>
+    <!-- About Me Section -->
+    <section>
+      <h2>About Me</h2>
+      <div class="card" style="text-align: center;">
+        <p style="max-width: 750px; margin: 0 auto; color: #333;">
+          I am an IT Support and Cybersecurity professional blending years of high-stakes operational coordination experience with hands-on technical training. I specialize in endpoint troubleshooting, threat identification, incident triage, and clear, user-first communication.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resumes">
+      <h2>Resumes</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Cybersecurity Resume</h3>
+          <p>Focused on SOC analysis, threat detection, log analysis, and incident response using tools like Splunk, Wireshark, and Linux.</p>
+          <a href="cyber-resume.pdf" target="_blank" class="btn">View Cyber Resume</a>
+        </div>
+        <div class="card">
+          <h3>Help Desk / IT Support Resume</h3>
+          <p>Targeted toward IT support, user endpoint provisioning, ticketing workflows, Active Directory administration, and troubleshooting.</p>
+          <a href="help-desk-IT-support-resume.pdf" target="_blank" class="btn">View IT Support Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section>
+      <h2>Certificates</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Google Cybersecurity</h3>
+          <p>Hands-on experience with Python, Linux, SQL, and SIEM tools, identifying vulnerabilities and mitigating security risks.</p>
+          <a href="google-cybersecurity.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Jr Penetration Tester</h3>
+          <p>Explored log anomalies, network forensics, and practical penetration testing methodologies.</p>
+          <a href="THM-JR-PENTESTER.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM SOC Level 1</h3>
+          <p>Practical threat detection, SIEM investigation, phishing analysis, and incident response workflows using Splunk and Elastic.</p>
+          <a href="THM-SOC-LEVEL-1.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Cybersecurity 101</h3>
+          <p>Foundational knowledge in networking, core threat vectors, and defensive security strategies.</p>
+          <a href="THM-CYBER-SECURITY-101.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section / Reports -->
+    <section>
+      <h2>Web App Pentest Reports & Case Studies</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Hammer Web App Case Study</h3>
+          <p>In-depth analysis of IDS alerts, C2 communications, and MITRE ATT&CK techniques with structured findings.</p>
+          <a href="Hammer_Report.pdf" target="_blank" class="btn">View Hammer Report</a>
+        </div>
+        <div class="card">
+          <h3>Pyrat Web App Case Study</h3>
+          <p>Investigation of a remote access vulnerability, privilege escalation path, and security findings report.</p>
+          <a href="Pyrat_Report.pdf" target="_blank" class="btn">View Pyrat Report</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Elvis Montan | Built for IT Support & Cybersecurity</p>
+  </footer>
+
 </body>
 </html>
-
