@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Network Share Access Triage | SOP</title>
+  <title>Elvis Montan | IT Support & Cybersecurity Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -15,191 +15,192 @@
       background: #f5f5f7;
       color: #1d1d1f;
       line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #6e6e73;
+      margin-top: 0.5rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
       padding: 2rem 1rem;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #6e6e73;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 1rem;
+    section {
+      margin: 3rem 0;
     }
     h2 {
-      font-size: 1.3rem;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      color: #0071e3;
-    }
-    p, ol {
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    ol {
-      padding-left: 1.5rem;
-    }
-    li {
-      margin-bottom: 0.8rem;
-    }
-    code {
-      background: #f0f0f2;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 0.9rem;
-    }
-    .back-link {
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      color: #0071e3;
-      text-decoration: none;
+      font-size: 1.8rem;
       font-weight: 500;
-    }
-    .back-link:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
-    
-    <h1>SOP-104: Troubleshooting Network Share Access & VLAN Misconfigurations</h1>
-    <div class="meta">
-      <strong>Target Audience:</strong> IT Support Specialists & Help Desk Technicians | <strong>Supported OS:</strong> Windows 10/11
-    </div>
-
-    <h2>1. Purpose & Scope</h2>
-    <p>This standard operating procedure guides technicians through diagnosing why an office-based user cannot access network share drives, focusing on environmental changes, VLAN assignment mismatches, and Layer 3 Access Control Lists (ACLs).</p>
-
-    <h2>2. Step-by-Step Troubleshooting Workflow</h2>
-    <ol>
-      <li><strong>Initial User Interview:</strong> Confirm user identity and exact error message. Ask targeted environmental questions: <em>Are you working from your assigned desk, or have you moved to a temporary office or conference room?</em></li>
-      <li><strong>Endpoint IP & Gateway Validation:</strong> Connect remotely to the workstation. Open the terminal and run <code>ipconfig</code> to verify the assigned IP address and default gateway.</li>
-      <li><strong>Network Path & Server Reachability:</strong> Test communication using <code>ping</code> to the local default gateway, then ping the target file server's IP address. A "Destination unreachable" response indicates a routing or firewall block.</li>
-      <li><strong>Switch Port & VLAN Verification:</strong> Check network documentation and access the switch CLI using <code>show interface [port] switchport</code> to verify physical port VLAN membership.</li>
-      <li><strong>Layer 3 ACL Policy Check:</strong> Inspect switch or router access lists using <code>show access-list</code> to determine if traffic is explicitly blocked between source and destination subnets.</li>
-    </ol>
-
-    <h2>3. Resolution & Verification</h2>
-    <p><strong>Root Cause:</strong> User was relocated to a temporary office associated with an isolated VLAN that lacked explicit ACL permissions to reach server subnets.</p>
-    <p><strong>Verification:</strong> Have the user re-map or navigate to the network share path (e.g., <code>\\HR_FILE01</code>), open a test file, and confirm read/write access.</p>
-
-    <br>
-    <a href="index.html" class="back-link">&larr; Return to Portfolio Home</a>
-  </div>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Network Share Access Triage | SOP</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background: #f5f5f7;
+      margin-bottom: 1.5rem;
+      text-align: center;
       color: #1d1d1f;
-      line-height: 1.6;
-      padding: 2rem 1rem;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
       background: #fff;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 1.8rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
-    .meta {
-      font-size: 0.9rem;
-      color: #6e6e73;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 1rem;
-    }
-    h2 {
+    .card h3 {
       font-size: 1.3rem;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      color: #0071e3;
-    }
-    p, ol {
-      margin-bottom: 1rem;
-      color: #333;
-    }
-    ol {
-      padding-left: 1.5rem;
-    }
-    li {
       margin-bottom: 0.8rem;
     }
-    code {
-      background: #f0f0f2;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 0.9rem;
+    .card p {
+      font-size: 0.95rem;
+      color: #515154;
+      margin-bottom: 1.2rem;
     }
-    .back-link {
+    .btn {
       display: inline-block;
-      margin-bottom: 1.5rem;
-      color: #0071e3;
-      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background-color: #0071e3;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 0.9rem;
       font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      align-self: flex-start;
     }
-    .back-link:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background-color: #0077ed;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      color: #6e6e73;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
-    
-    <h1>SOP-104: Troubleshooting Network Share Access & VLAN Misconfigurations</h1>
-    <div class="meta">
-      <strong>Target Audience:</strong> IT Support Specialists & Help Desk Technicians | <strong>Supported OS:</strong> Windows 10/11
-    </div>
 
-    <h2>1. Purpose & Scope</h2>
-    <p>This standard operating procedure guides technicians through diagnosing why an office-based user cannot access network share drives, focusing on environmental changes, VLAN assignment mismatches, and Layer 3 Access Control Lists (ACLs).</p>
+  <header>
+    <h1>Elvis Montan</h1>
+    <p>IT Support Specialist | Cybersecurity Analyst | Operational Coordinator</p>
+  </header>
 
-    <h2>2. Step-by-Step Troubleshooting Workflow</h2>
-    <ol>
-      <li><strong>Initial User Interview:</strong> Confirm user identity and exact error message. Ask targeted environmental questions: <em>Are you working from your assigned desk, or have you moved to a temporary office or conference room?</em></li>
-      <li><strong>Endpoint IP & Gateway Validation:</strong> Connect remotely to the workstation. Open the terminal and run <code>ipconfig</code> to verify the assigned IP address and default gateway.</li>
-      <li><strong>Network Path & Server Reachability:</strong> Test communication using <code>ping</code> to the local default gateway, then ping the target file server's IP address. A "Destination unreachable" response indicates a routing or firewall block.</li>
-      <li><strong>Switch Port & VLAN Verification:</strong> Check network documentation and access the switch CLI using <code>show interface [port] switchport</code> to verify physical port VLAN membership.</li>
-      <li><strong>Layer 3 ACL Policy Check:</strong> Inspect switch or router access lists using <code>show access-list</code> to determine if traffic is explicitly blocked between source and destination subnets.</li>
-    </ol>
+  <main>
+    <!-- About Me Section -->
+    <section>
+      <h2>About Me</h2>
+      <div class="card" style="text-align: center;">
+        <p style="max-width: 750px; margin: 0 auto; color: #333;">
+          Blending years of high-stakes operational coordination experience with CompTIA A+, Security+, and Google IT Support certifications. I specialize in endpoint troubleshooting, threat identification, incident triage, and clear, user-first communication.
+        </p>
+      </div>
+    </section>
 
-    <h2>3. Resolution & Verification</h2>
-    <p><strong>Root Cause:</strong> User was relocated to a temporary office associated with an isolated VLAN that lacked explicit ACL permissions to reach server subnets.</p>
-    <p><strong>Verification:</strong> Have the user re-map or navigate to the network share path (e.g., <code>\\HR_FILE01</code>), open a test file, and confirm read/write access.</p>
+    <!-- Resume Section -->
+    <section id="resumes">
+      <h2>Resumes</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Cybersecurity Resume</h3>
+          <p>Focused on SOC analysis, threat detection, log analysis, and incident response using Splunk, Wireshark, and Linux.</p>
+          <a href="cyber-resume.pdf" target="_blank" class="btn">View Cyber Resume</a>
+        </div>
+        <div class="card">
+          <h3>Help Desk / IT Support Resume</h3>
+          <p>Targeted toward IT support, user endpoint provisioning, ticketing workflows, Active Directory administration, and troubleshooting.</p>
+          <a href="help-desk-IT-support-resume.pdf" target="_blank" class="btn">View IT Support Resume</a>
+        </div>
+      </div>
+    </section>
 
-    <br>
-    <a href="index.html" class="back-link">&larr; Return to Portfolio Home</a>
-  </div>
+    <!-- IT Support Knowledge Base & SOPs (NEW) -->
+    <section>
+      <h2>IT Support Playbooks & SOPs</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Network Share Access Triage</h3>
+          <p>Standard operating procedure analyzing VLAN subnets, switch port configurations, and Layer 3 ACL policies to solve share connection errors.</p>
+          <a href="kb-network-triage.md" target="_blank" class="btn">View Triage SOP</a>
+        </div>
+        <div class="card">
+          <h3>Incident Post-Mortem Playbook</h3>
+          <p>Structured breakdown of triaging and resolving urgent multi-user authentication failures under tight operational pressure.</p>
+          <a href="incident-postmortem.md" target="_blank" class="btn">View Post-Mortem</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section>
+      <h2>Certificates</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Google Cybersecurity</h3>
+          <p>Hands-on experience with Python, Linux, SQL, and SIEM tools, identifying vulnerabilities and mitigating security risks.</p>
+          <a href="google-cybersecurity.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Jr Penetration Tester</h3>
+          <p>Explored log anomalies, network forensics, and practical penetration testing methodologies.</p>
+          <a href="THM-JR-PENTESTER.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM SOC Level 1</h3>
+          <p>Practical threat detection, SIEM investigation, phishing analysis, and incident response workflows using Splunk and Elastic.</p>
+          <a href="THM-SOC-LEVEL-1.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+        <div class="card">
+          <h3>THM Cybersecurity 101</h3>
+          <p>Foundational knowledge in networking, core threat vectors, and defensive security strategies.</p>
+          <a href="THM-CYBER-SECURITY-101.pdf" target="_blank" class="btn">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section / Reports -->
+    <section>
+      <h2>Web App Pentest Reports & Case Studies</h2>
+      <div class="grid-container">
+        <div class="card">
+          <h3>Hammer Web App Case Study</h3>
+          <p>In-depth analysis of IDS alerts, C2 communications, and MITRE ATT&CK techniques with structured findings.</p>
+          <a href="Hammer_Report.pdf" target="_blank" class="btn">View Hammer Report</a>
+        </div>
+        <div class="card">
+          <h3>Pyrat Web App Case Study</h3>
+          <p>Investigation of a remote access vulnerability, privilege escalation path, and security findings report.</p>
+          <a href="Pyrat_Report.pdf" target="_blank" class="btn">View Pyrat Report</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Elvis Montan | Built for IT Support & Cybersecurity</p>
+  </footer>
+
 </body>
 </html>
