@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Share Access Triage SOP</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; background: #f5f5f7; }
+        .content { background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.4rem; margin-top: 2rem; color: #0071e3; }
+        ul, ol { margin-left: 20px; margin-bottom: 1rem; }
+        a { color: #0071e3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <a href="index.html">&larr; Back to Portfolio</a>
+        <h1>SOP-104: Troubleshooting Network Share Access & VLAN Misconfigurations</h1>
+        <p><strong>Target Audience:</strong> IT Support Specialists & Help Desk Technicians</p>
+        <p><strong>Supported OS:</strong> Windows 10 / Windows 11</p>
+
+        <h2>1. Purpose & Scope</h2>
+        <p>This standard operating procedure guides technicians through diagnosing why an office-based user cannot access network share drives, focusing on VLAN assignments and Layer 3 ACL policies.</p>
+
+        <h2>2. Step-by-Step Troubleshooting Workflow</h2>
+        <ol>
+            <li><strong>Initial User Interview:</strong> Confirm user identity and exact error message. Ask: <em>Are you working from your assigned desk, or have you moved to a temporary office?</em></li>
+            <li><strong>Endpoint IP Validation:</strong> Run <code>ipconfig</code> remotely to verify DHCP lease and subnet allocation.</li>
+            <li><strong>Network Reachability:</strong> Ping the default gateway, then ping the target file server's IP address. A "Destination unreachable" response points to a routing or firewall block.</li>
+            <li><strong>Switch Port & VLAN Check:</strong> Inspect the switch CLI using <code>show interface [port] switchport</code> to verify physical VLAN membership.</li>
+        </ol>
+        <p><a href="index.html">&larr; Return to Home</a></p>
+    </div>
+</body>
+</html>
