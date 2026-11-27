@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOP-105: Troubleshooting Intermittent Network Connectivity & Duplicate IP Addresses</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+background: #f5f5f7;
+color: #1d1d1f;
+line-height: 1.6;
+padding: 2rem 1rem;
+}
+.container {
+max-width: 850px;
+margin: 0 auto;
+background: #fff;
+padding: 3rem;
+border-radius: 20px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.back-link {
+display: inline-block;
+margin-bottom: 1.5rem;
+color: #0071e3;
+text-decoration: none;
+font-weight: 500;
+}
+.back-link:hover {
+text-decoration: underline;
+}
+h1 {
+font-size: 2rem;
+margin-bottom: 1rem;
+color: #1d1d1f;
+}
+.meta-box {
+border-left: 4px solid #0071e3;
+padding: 1rem 1.2rem;
+background-color: #f9f9fb;
+margin-bottom: 2rem;
+border-radius: 0 8px 8px 0;
+}
+.meta-box p {
+font-size: 0.95rem;
+color: #48484a;
+margin-bottom: 0.4rem;
+}
+.meta-box p:last-child {
+margin-bottom: 0;
+}
+h2 {
+font-size: 1.4rem;
+margin-top: 2.5rem;
+margin-bottom: 1rem;
+color: #1d1d1f;
+border-bottom: 1px solid #e0e0e0;
+padding-bottom: 0.5rem;
+}
+p {
+margin-bottom: 1rem;
+color: #333;
+}
+ul, ol {
+margin-bottom: 1.5rem;
+padding-left: 1.5rem;
+}
+li {
+margin-bottom: 1rem;
+color: #333;
+}
+.step-card {
+background: #fbfbfd;
+border: 1px solid #e5e5ea;
+padding: 1.2rem 1.5rem;
+border-radius: 12px;
+margin-bottom: 1rem;
+}
+.step-card h3 {
+font-size: 1.1rem;
+color: #0071e3;
+margin-bottom: 0.4rem;
+}
+.verification {
+font-size: 0.9rem;
+color: #515154;
+font-style: italic;
+margin-top: 0.4rem;
+}
+code {
+background: #f0f0f2;
+padding: 0.2rem 0.4rem;
+border-radius: 4px;
+font-family: monospace;
+font-size: 0.9rem;
+color: #d70015;
+}
+footer {
+text-align: center;
+margin-top: 3rem;
+padding-top: 1.5rem;
+border-top: 1px solid #e0e0e0;
+color: #6e6e73;
+font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+<h1>SOP-105: Troubleshooting Intermittent Network Connectivity & Duplicate IP Addresses</h1>
+<div class="meta-box">
+<p><strong>Target Audience:</strong> IT Support Specialists &amp; Help Desk Technicians</p>
+<p><strong>Supported OS:</strong> Windows 10 / Windows 11</p>
+<p><strong>Estimated Time:</strong> 15 - 20 minutes</p>
+<p><strong>Prerequisites:</strong> Remote support tool access (RDP/Screen Share), switch CLI read access, and network topology documentation.</p>
+</div>
+<h2>Purpose</h2>
+<p>This Standard Operating Procedure guides technicians through troubleshooting intermittent network connectivity where a user's connection drops or stalls during the day, with a focus on DHCP scope exclusions and duplicate IP address conflicts with static network devices.</p>
+<h2>Step-by-Step Troubleshooting Workflow</h2>
+<div class="step-card">
+<h3>1. Initial User Interview &amp; Scope Verification (3 min)</h3>
+<p>Confirm the employee's identity and ask environmental questions: <em>Are you working from your assigned desk? Is anyone else experiencing the same issue? Has anything changed since your last login, such as recent updates, office maintenance, or work on nearby equipment or printers? What specific services or resources (internet, email, network shares) are failing?</em></p>
+<p class="verification"><strong>Verification:</strong> Technician documents the user's physical location, affected apps/shares, and any recent hardware or network changes.</p>
+</div>
+<div class="step-card">
+<h3>2. Ethernet Cable, Switch &amp; Port Connection (3 min)</h3>
+<p>Connect remotely to the workstation and check network topology documentation to identify the switch and port serving the user's jack. On the switch CLI, inspect port status and error counters (for example, <code>show interfaces fastEthernet 0/10</code> or <code>show interfaces status</code>).</p>
+<p class="verification"><strong>Verification:</strong> Port is up/connected with no abnormal interface drops, CRC errors, or link flaps.</p>
+</div>
+<div class="step-card">
+<h3>3. Endpoint IP &amp; Gateway Validation (4 min)</h3>
+<p>Open Command Prompt on the employee's machine and run <code>ipconfig</code>. Record the assigned IPv4 address, subnet mask, and default gateway, then test reachability with <code>ping &lt;gateway IP&gt;</code>.</p>
+<p class="verification"><strong>Verification:</strong> Workstation has a valid IPv4 address on the expected subnet and receives replies from the default gateway.</p>
+</div>
+<div class="step-card">
+<h3>4. Duplicate IP Address &amp; MAC Trace Check (5 min)</h3>
+<p>End the remote session and have the user unplug the Ethernet cable from their workstation. From another machine on the same subnet, clear the ARP cache (<code>arp -d *</code> in an elevated prompt), run <code>ping &lt;workstation IP&gt;</code>, and check <code>arp -a</code> to capture the responding MAC address. Trace that MAC address on the switch (for example, <code>show mac address-table address &lt;MAC&gt;</code>).</p>
+<p class="verification"><strong>Verification:</strong> Replies to the workstation's IP continue after the cable is unplugged, and the MAC address maps to another device on a switch port (such as a printer on <code>Fa0/20</code>).</p>
+</div>
+<h2>Resolution &amp; Remediation</h2>
+<ul>
+<li><strong>Root Cause:</strong> A network device (such as an office printer serviced earlier in the day) uses a static IP address (for example, <code>192.168.40.50</code>) that was not excluded from the DHCP scope. When the device was offline, DHCP leased that address to the user's workstation, causing IP conflicts and intermittent drops once the static device came back online.</li>
+<li><strong>Fix:</strong> Exclude the static IP address (such as <code>192.168.40.50</code>) from the DHCP server scope, have the user reconnect their Ethernet cable, reconnect remotely, and run <code>ipconfig /release</code> followed by <code>ipconfig /renew</code>.</li>
+</ul>
+<h2>How to Verify Success</h2>
+<p>Confirm the workstation received a new, non-conflicting IP lease via <code>ipconfig</code>, ping the default gateway and the static device (such as the printer), and test internal shares. Have the user confirm internet access, email (Outlook), and shared folder access are working normally.</p>
+<footer>
+<p>&copy; 2026 Elvis Montan | IT Support Knowledge Base</p>
+</footer>
+</div>
+</body>
+</html>
